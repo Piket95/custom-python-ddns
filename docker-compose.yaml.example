@@ -1,0 +1,13 @@
+service:
+  dns:
+    image: custom-python-dyndns-service
+    build: .
+    restart: unless-stopped
+    container_name: dns
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 80:80
+    volumes:
+      - "./bind-data/:/etc/bind"
+      - "./data:/app/data"
