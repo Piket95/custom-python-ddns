@@ -7,7 +7,7 @@ services:
     ports:
       - 53:53/tcp
       - 53:53/udp
-      - 8003:80
+      - 80:80
     environment:
       - ZONE=ddns.<zone-domain (subdomain)> # ddns can be any subdomain of your liking (same as zone declaring in named.conf)
     volumes:
