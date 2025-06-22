@@ -2,7 +2,7 @@ options {
     recursion no;
     allow-query { none; };
 };
-zone "dns.<domain>" IN { //dns can be any subdomain of your liking
+zone "ddns.<domain>" IN { //ddns can be any subdomain of your liking (same as zone environment variable in docker-compose)
     type master;
     file "/etc/bind/<domain>.zone"; //replace with your created zone file (example file can be your blueprint)
     allow-query { any; };

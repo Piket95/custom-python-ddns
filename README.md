@@ -1,6 +1,6 @@
 # Custom Python DynDNS Service
 
-A custom selfhosted DynDns service written in python using bind9!
+A custom selfhosted DynDns service written in python and build around bind9!
 
 Update your public ip address you got from your isp with a custom domain address.
 Works with fritzbox or a custom http/https call to this server.

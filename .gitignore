@@ -1,5 +1,5 @@
 /.venv/
 /data/
 
-/bind-data/*
-!/bind-data/*.example
+/bind-data/
+docker-compose.yaml

@@ -1,13 +1,16 @@
-service:
+services:
   dns:
-    image: custom-python-dyndns-service
+    image: custom-python-ddns
     build: .
     restart: unless-stopped
-    container_name: dns
+    container_name: ddns
     ports:
       - 53:53/tcp
       - 53:53/udp
-      - 80:80
+      - 8003:80
+    environment:
+      - ZONE=ddns.<zone-domain (subdomain)> # ddns can be any subdomain of your liking (same as zone declaring in named.conf)
     volumes:
-      - "./bind-data/:/etc/bind"
+      - "./bind-data/named.conf:/etc/bind/named.conf"
+      - "./bind-data/<zone-file-in-bind-data>:/etc/bind/<zone-file-in-bind-data>"
       - "./data:/app/data"
