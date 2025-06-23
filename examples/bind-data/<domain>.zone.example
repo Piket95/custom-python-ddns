@@ -1,6 +1,6 @@
 $TTL 2d
 
-$ORIGIN dns.<domain>. // dot is necessary at the end (dns can be changed to whatever subdomain)
+$ORIGIN ddns.<domain>. // dot is necessary at the end (dns can be changed to whatever subdomain)
 
 @ IN SOA ns.<domain>. info.<domain>. ( //info.<domain> is the email and gets resolved to info@<domain> (dot is necessary too here) (ns can be changed to whatever) (info should be your real email)
         2025062101 ; Serial // have to be increased every time this file gets changed or updated (can whatever number. usual date + 01)
@@ -11,3 +11,4 @@ $ORIGIN dns.<domain>. // dot is necessary at the end (dns can be changed to what
 )
 
   IN NS ns.<domain>. // use the domain for nameserver from the SOA record entry?!
+@ IN A <ip> // so the ddns.<domain> returns the ip too, or a wished one

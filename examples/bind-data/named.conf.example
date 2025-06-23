@@ -1,6 +1,5 @@
 options {
-    recursion no;
-    allow-query { none; };
+    recursion no; // optional if you want to define forwarders or let this nameserver ask other nameservers in general if it haven't an entry
 };
 zone "ddns.<domain>" IN { //ddns can be any subdomain of your liking (same as zone environment variable in docker-compose)
     type master;
