@@ -1,5 +1,5 @@
 services:
-  dns:
+  ddns:
     image: custom-python-ddns
     build: .
     restart: unless-stopped
