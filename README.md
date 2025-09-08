@@ -13,10 +13,23 @@ Works with fritzbox or a custom http/https call to this server.
 ```
 http(s)://<ip-to-this-server>/update?user=<username>&password=<pass>&host=<domain>&ip=<ipaddr>
 ```
-This Update-URL can be set 1:1 in the fritzbox admin interface. The variables in <> dont have to be replaced EXCEPT <ip-to-this-server> in the beginning.
+This Update-URL can be set 1:1 in the fritzbox admin interface. The variables in <> dont have to be replaced EXCEPT `<ip-to-your-server>` in the beginning.
 Fritzbox replace the placeholders/variables automatically with the values provided by you in the form in the admin interface.
 
 
 ## Todos and considerations
 - Add Setup steps including setting up a NS Record on the common Nameserver to redirect to this service in the README.md
 - Maybe add environment variables in the dockerfile to set the zone subdomain and the nameserver domain name, aswell as the ip of the server the container gets installed on (or maybe we can get it from a script/command???)
+- die conf files können als template vorliegen und durch docker environment variablen in einem entryskript generiert werden:
+```bash
+envsubst < /etc/bind/named.conf.template > /etc/bind/named.conf
+named -g
+```
+Variablennamen sind so zu deklarieren `$DOMAINNAME`
+```bash
+[bash]$ envsubst 
+$TERM
+xterm-kitty
+Ich habe das Terminal: $TERM
+Ich habe das Terminal: xterm-kitty
+```
