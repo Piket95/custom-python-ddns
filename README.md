@@ -8,6 +8,7 @@ Works with fritzbox or a custom http/https call to this server.
 ## Requirements
 - Own base Domain Address
 - Access to your DNS settings of your base domain
+- DNSStubListener in /etc/systemd/resolved.conf has to be set to "no" in some cases
 
 ## Request:
 ```
